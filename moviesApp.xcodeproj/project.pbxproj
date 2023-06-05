@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3579BB862A2DE15C001D5237 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3579BB852A2DE15C001D5237 /* AppDelegate.swift */; };
-		3579BB882A2DE15C001D5237 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3579BB872A2DE15C001D5237 /* SceneDelegate.swift */; };
 		3579BB8A2A2DE15C001D5237 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3579BB892A2DE15C001D5237 /* ViewController.swift */; };
 		3579BB8D2A2DE15C001D5237 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3579BB8B2A2DE15C001D5237 /* Main.storyboard */; };
 		3579BB8F2A2DE15D001D5237 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3579BB8E2A2DE15D001D5237 /* Assets.xcassets */; };
@@ -38,7 +37,6 @@
 /* Begin PBXFileReference section */
 		3579BB822A2DE15C001D5237 /* moviesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moviesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3579BB852A2DE15C001D5237 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3579BB872A2DE15C001D5237 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3579BB892A2DE15C001D5237 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3579BB8C2A2DE15C001D5237 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3579BB8E2A2DE15D001D5237 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,12 +97,13 @@
 		3579BB842A2DE15C001D5237 /* moviesApp */ = {
 			isa = PBXGroup;
 			children = (
-				3579BB852A2DE15C001D5237 /* AppDelegate.swift */,
-				3579BB872A2DE15C001D5237 /* SceneDelegate.swift */,
-				3579BB892A2DE15C001D5237 /* ViewController.swift */,
-				3579BB8B2A2DE15C001D5237 /* Main.storyboard */,
-				3579BB8E2A2DE15D001D5237 /* Assets.xcassets */,
-				3579BB902A2DE15D001D5237 /* LaunchScreen.storyboard */,
+				3579BBBD2A2DE3A5001D5237 /* Application */,
+				3579BBBC2A2DE3A3001D5237 /* Constant */,
+				3579BBBB2A2DE3A0001D5237 /* Helper */,
+				3579BBBA2A2DE39E001D5237 /* Extensions */,
+				3579BBB92A2DE39C001D5237 /* Resources */,
+				3579BBB82A2DE397001D5237 /* StoryBoard */,
+				3579BBB52A2DE386001D5237 /* Screens */,
 				3579BB932A2DE15D001D5237 /* Info.plist */,
 			);
 			path = moviesApp;
@@ -125,6 +124,92 @@
 				3579BBA82A2DE15D001D5237 /* moviesAppUITestsLaunchTests.swift */,
 			);
 			path = moviesAppUITests;
+			sourceTree = "<group>";
+		};
+		3579BBB52A2DE386001D5237 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				3579BBBE2A2DE412001D5237 /* All Movies */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		3579BBB82A2DE397001D5237 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				3579BB8B2A2DE15C001D5237 /* Main.storyboard */,
+				3579BB902A2DE15D001D5237 /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		3579BBB92A2DE39C001D5237 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3579BB8E2A2DE15D001D5237 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3579BBBA2A2DE39E001D5237 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3579BBBB2A2DE3A0001D5237 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		3579BBBC2A2DE3A3001D5237 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		3579BBBD2A2DE3A5001D5237 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				3579BB852A2DE15C001D5237 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		3579BBBE2A2DE412001D5237 /* All Movies */ = {
+			isa = PBXGroup;
+			children = (
+				3579BBBF2A2DE422001D5237 /* Model */,
+				3579BBC12A2DE42F001D5237 /* View */,
+				3579BBC02A2DE428001D5237 /* ViewModel */,
+			);
+			path = "All Movies";
+			sourceTree = "<group>";
+		};
+		3579BBBF2A2DE422001D5237 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3579BBC02A2DE428001D5237 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3579BBC12A2DE42F001D5237 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3579BB892A2DE15C001D5237 /* ViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +345,6 @@
 			files = (
 				3579BB8A2A2DE15C001D5237 /* ViewController.swift in Sources */,
 				3579BB862A2DE15C001D5237 /* AppDelegate.swift in Sources */,
-				3579BB882A2DE15C001D5237 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,9 +535,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hamzaahmedshad.moviesApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -478,9 +565,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hamzaahmedshad.moviesApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
