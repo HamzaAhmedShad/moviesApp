@@ -16,23 +16,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmq-Bc-8ov">
-                                <rect key="frame" x="175" y="416" width="39" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0hi-nD-bxx">
+                                <rect key="frame" x="0.0" y="155" width="393" height="663"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gmq-Bc-8ov" secondAttribute="trailing" symbolic="YES" id="9nc-TH-G2Q"/>
-                            <constraint firstItem="gmq-Bc-8ov" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="313" id="BAV-lh-gyP"/>
-                            <constraint firstItem="gmq-Bc-8ov" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QSh-Ex-RxG"/>
-                            <constraint firstItem="gmq-Bc-8ov" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="175" id="S6R-8k-7R8"/>
+                            <constraint firstItem="0hi-nD-bxx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KoI-Sf-Cox"/>
+                            <constraint firstItem="0hi-nD-bxx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="YyR-vX-12D"/>
+                            <constraint firstItem="0hi-nD-bxx" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="hsy-KX-Mgn"/>
+                            <constraint firstItem="0hi-nD-bxx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pTr-e4-Dpa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="kXn-KS-PoA"/>
+                    <navigationItem key="navigationItem" id="kXn-KS-PoA">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="xwQ-QO-HTE">
+                            <rect key="frame" x="16" y="6" width="361" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <segments>
+                                <segment title="All Movies"/>
+                                <segment title="Favourite Movies"/>
+                            </segments>
+                            <connections>
+                                <action selector="didChangeSegment:" destination="BYZ-38-t0r" eventType="valueChanged" id="v35-CY-sxi"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="segmentControl" destination="xwQ-QO-HTE" id="fVe-qG-eMY"/>
+                        <outlet property="tableView" destination="0hi-nD-bxx" id="onq-BI-YF2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -43,9 +59,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yWL-Vq-NvU" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y7S-fq-unk">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Y7S-fq-unk">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
