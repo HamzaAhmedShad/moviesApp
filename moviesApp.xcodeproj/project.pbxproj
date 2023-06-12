@@ -90,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		355CB68C2A37022700B1122D /* Movie Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3579BBCA2A2E12BF001D5237 /* MoviesTableViewCell.swift */,
+				3579BBCB2A2E12BF001D5237 /* MoviesTableViewCell.xib */,
+			);
+			path = "Movie Cells";
+			sourceTree = "<group>";
+		};
 		3579BB792A2DE15C001D5237 = {
 			isa = PBXGroup;
 			children = (
@@ -212,8 +221,6 @@
 			isa = PBXGroup;
 			children = (
 				3579BBC82A2DED5E001D5237 /* movieModel.swift */,
-				3579BBCA2A2E12BF001D5237 /* MoviesTableViewCell.swift */,
-				3579BBCB2A2E12BF001D5237 /* MoviesTableViewCell.xib */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -230,6 +237,7 @@
 		3579BBC12A2DE42F001D5237 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				355CB68C2A37022700B1122D /* Movie Cells */,
 				3579BB892A2DE15C001D5237 /* ViewController.swift */,
 			);
 			path = View;

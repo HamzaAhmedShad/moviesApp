@@ -38,7 +38,8 @@ struct Movie: Decodable {
     let voteCount: Int
     let name: String?
     let originalName, firstAirDate: String?
-
+    var isfav: Bool? = false
+    
     enum CodingKeys: String, CodingKey {
         case backdropPath = "backdrop_path"
         case id

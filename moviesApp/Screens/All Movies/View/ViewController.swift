@@ -47,7 +47,7 @@ extension ViewController{
             case .loading: print("Movies Loading")
             case .stopLoading: print("Stop Loading")
             case .dataLoaded:
-                print(self.viewModel.movie)
+                print(MainViewModel.movie)
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
@@ -62,24 +62,24 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch segmentControl.selectedSegmentIndex{
         case 0:
-            return viewModel.movie.count
+            return MainViewModel.movie.count
         case 1:
-            return viewModel.movie.count
+            return MainViewModel.favMovie.count
         default:
             break
         }
-        return viewModel.movie.count
+        return MainViewModel.movie.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "MoviesTableViewCell", for: indexPath) as? MoviesTableViewCell{
             switch segmentControl.selectedSegmentIndex{
             case 0:
-                let movieInformation = viewModel.movie[indexPath.row]
+                let movieInformation = MainViewModel.movie[indexPath.row]
                 cell.movieDetailConfig(with: movieInformation)
                 return cell
             case 1:
-                let movieInformation = viewModel.movie[indexPath.row]
+                let movieInformation = MainViewModel.favMovie[indexPath.row]
                 cell.movieDetailConfig(with: movieInformation)
                 return cell
             default:
