@@ -8,13 +8,14 @@
 import UIKit
 import SDWebImage
 
-
+protocol favDelegate: AnyObject{
+    func didTapFavBTN(in cell: MoviesTableViewCell)
+}
 
 class MoviesTableViewCell: UITableViewCell {
     
-    
-    
-    var myMovie: Movie?
+    weak var delegate: favDelegate?
+    var movie: Movie?
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var movieImageView: UIImageView!
@@ -22,7 +23,9 @@ class MoviesTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var favBtn: UIButton!
+    
     func movieDetailConfig(with movie: Movie){
+        self.movie = movie
         if let Name = movie.name {
             nameLabel.text = Name
         } else {
@@ -31,34 +34,36 @@ class MoviesTableViewCell: UITableViewCell {
         dateLabel.text = movie.releaseDate
         scoreLabel.text = "\(movie.voteAverage)"
         movieImageView.sd_setImage(with: URL(string: Constant.API.imageServer + (movie.posterPath ?? "")))
-        myMovie = movie
-    }
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+        if movie.isfav ?? false {
+            favBtn.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        } else {
+            favBtn.setImage(UIImage(systemName: "star"), for: .normal)
+        }
         
-        // Configure the view for the selected state
     }
+    
+    
+        override func awakeFromNib() {
+            super.awakeFromNib()
+            // Initialization code
+        }
+    
+        override func setSelected(_ selected: Bool, animated: Bool) {
+            super.setSelected(selected, animated: animated)
+    
+            // Configure the view for the selected state
+        }
     
     @IBAction func favBtnPressed(_ sender: Any) {
-        if myMovie?.isfav == false{
-            favBtn.configuration?.image = UIImage(systemName: "star.fill")
-            if MainViewModel.inIsFav(movie: myMovie!)==false{
-                MainViewModel.favMovie.append(myMovie!)
+        if let movie = movie {
+            delegate?.didTapFavBTN(in: self)
+            
+            if movie.isfav ?? false {
+                favBtn.setImage(UIImage(systemName: "star.fill"), for: .normal)
+            } else {
+                favBtn.setImage(UIImage(systemName: "star"), for: .normal)
             }
-            myMovie?.isfav = true
-        }
-        else if myMovie?.isfav == true{
-            favBtn.configuration?.image = UIImage(systemName: "star")
-            let removeIndex = MainViewModel.favMovie.firstIndex(where: {$0.name == myMovie?.name})
-            MainViewModel.favMovie.remove(at: removeIndex!)
-            myMovie?.isfav = false
+            
         }
     }
 }
